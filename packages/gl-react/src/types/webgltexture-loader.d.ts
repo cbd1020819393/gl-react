@@ -1,25 +1,29 @@
-declare module "webgltexture-loader" {
-  export interface WebGLTextureLoaderResult {
-    texture: WebGLTexture;
-    width: number;
-    height: number;
-  }
+/**
+ * MIT License
+ *
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 
-  export interface WebGLTextureLoader<T = any> {
-    canLoad(input: any): boolean;
-    get(input: T): WebGLTextureLoaderResult | null;
-    load(input: T): Promise<WebGLTextureLoaderResult>;
-    update(input: T): void;
-    dispose(): void;
-  }
-
-  export class LoaderResolver {
-    constructor(gl: WebGLRenderingContext);
-    resolve(input: any): WebGLTextureLoader | null;
-    dispose(): void;
-  }
-}
-
+// "webgltexture-loader" 使用包内自带类型（lib/index.d.ts），此处不再环境声明。
+// 以下旁支 loader 包无类型，保留空声明避免副作用导入报错。
 declare module "webgltexture-loader-ndarray" {}
 declare module "webgltexture-loader-dom" {}
 declare module "webgltexture-loader-expo" {}

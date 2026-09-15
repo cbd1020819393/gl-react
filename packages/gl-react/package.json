@@ -1,33 +1,42 @@
 {
-  "name": "gl-react",
-  "version": "6.0.0",
+  "name": "@react-native-ohos/gl-react",
+  "version": "1.0.0-beta.1",
+  "displayName": "gl-react (React Native HarmonyOS)",
   "license": "MIT",
   "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
-  "description": "Universal React library, write and compose WebGL shaders, implement complex effects using a descriptive paradigm",
+  "description": "gl-react HarmonyOS adaptation: universal React library to write and compose WebGL shaders on OpenHarmony (core + GLView binding + native EGL/GLES layer in one package)",
   "keywords": [
     "gl-react",
-    "gl",
-    "opengl",
-    "react",
-    "react-component"
+    "react-native",
+    "harmony",
+    "harmonyos",
+    "webgl",
+    "opengl"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/gre/gl-react"
   },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "homepage": "https://github.com/gre/gl-react",
+  "main": "./src/index.ts",
+  "react-native": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
     "src",
     "lib",
+    "harmony",
     "README.md",
+    "README_EN.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
-  "browserify-shim": {
-    "react": "global:React"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
-  "peerDependencies": {
-    "react": ">=18"
+  "scripts": {
+    "codegen-lib": "react-native codegen-harmony --cpp-output-path ./harmony/gl_react_dev/src/main/cpp/generated --ets-output-path ./harmony/gl_react_dev/src/main/ets/generated",
+    "jtest": "jest --config jtest/jest.config.js",
+    "jtest:coverage": "jest --config jtest/jest.config.js --coverage"
   },
   "dependencies": {
     "gl-shader": "^4.3.1",
@@ -38,8 +47,43 @@
     "webgltexture-loader": "2.1.2",
     "webgltexture-loader-ndarray": "2.1.2"
   },
-  "scripts": {
-    "build": "cd ../.. && export PATH=$(npm bin):$PATH && cd - && rm -rf gl-react.js && browserify lib/index.js -t [ browserify-shim ] --standalone GLReact > gl-react.js"
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.72"
   },
-  "gitHead": "9adf91601b95aec6dcd350179fdbd139a97bed5e"
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
+    "@react-native-oh/react-native-harmony-cli": "^0.77.50",
+    "@react-native/typescript-config": "0.79.5",
+    "@types/node": "^18.19.130",
+    "@types/react": "18.2.79",
+    "jest": "^29.7.0",
+    "metro": "^0.81.0",
+    "react": "18.2.0",
+    "react-native": "0.72.5",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "harmony": {
+    "alias": "gl-react",
+    "autolinking": {
+      "cmakeLibraryTargetName": "gl_react_dev",
+      "ohPackageName": "@react-native-ohos/gl-react",
+      "etsPackageClassName": "GlReactDevPackage",
+      "cppPackageClassName": "GlReactDevPackage"
+    },
+    "codegenConfig": [
+      {
+        "version": 1,
+        "specPaths": [
+          "./src/specs/v1"
+        ]
+      }
+    ]
+  }
 }

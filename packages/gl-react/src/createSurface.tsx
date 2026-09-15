@@ -40,7 +40,7 @@ export interface Surface {
   getGLSize(): [number, number];
   getGLName(): string;
   getGLShortName(): string;
-  captureAsDataURL(...args: any[]): string;
+  captureAsDataURL(...args: any[]): Promise<string>;
   captureAsBlob(...args: any[]): Promise<Blob>;
   capture(x?: number, y?: number, w?: number, h?: number): NDArray;
   redraw(): void;
@@ -52,7 +52,7 @@ export interface Surface {
   _addGLNodeChild(node: Node): void;
   _removeGLNodeChild(node: Node): void;
   _resolveTextureLoader(raw: any): {
-    loader: WebGLTextureLoader | null;
+    loader: WebGLTextureLoader<any> | null;
     input: any;
   };
   _getShader(shaderId: ShaderIdentifier): Shader;
@@ -210,7 +210,7 @@ export default ({
       return "Surface";
     }
 
-    captureAsDataURL(...args: any[]): string {
+    captureAsDataURL(...args: any[]): Promise<string> {
       const { glView } = this;
       invariant(glView, "GLView is mounted");
       invariant(
@@ -438,11 +438,11 @@ export default ({
     };
 
     _resolveTextureLoader(raw: any): {
-      loader: WebGLTextureLoader | null;
+      loader: WebGLTextureLoader<any> | null;
       input: any;
     } {
       let input = raw;
-      let loader: WebGLTextureLoader | null =
+      let loader: WebGLTextureLoader<any> | null =
         (this.loaderResolver && this.loaderResolver.resolve(input)) || null;
       return { loader, input };
     }

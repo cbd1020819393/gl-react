@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <oatconfig>
+        <licensefile>LICENSE</licensefile>
+        <policylist>
+            <policy name="projectPolicy" desc="">
+                <policyitem type="license" name="MIT" path=".*" desc="项目基于 MIT 协议的开源软件 gl-react 开发" />
+            </policy>
+            <policy name="projectPolicy" desc="">
+                <policyitem type="compatibility" name="GPL-2.0+" path=".*" desc="不影响兼容性" />
+                <policyitem type="compatibility" name="Apache-2.0" path=".*" desc="不影响兼容性" />
+                <policyitem type="compatibility" name="BSDStyleLicense" path=".*" desc="不影响兼容性" />
+                <policyitem type="compatibility" name="MIT" path=".*" desc="不影响兼容性" />
+                <policyitem type="compatibility" name="GPLStyleLicense" path=".*" desc="不影响兼容性" />
+            </policy>
+        </policylist>
+        <filefilterlist>
+            <filefilter name="copyrightPolicyFilter" desc="版权头屏蔽策略：上游源码、工程脚本模板、Codegen 生成文件">
+                <!-- ===== 上游源库（原 gl-react 仓库内容，不修改版权头） ===== -->
+                <filteritem type="filepath" name="packages/cookbook/.*"
+                    desc="gl-react 上游源码与示例，不修改版权头" />
+                <filteritem type="filepath" name="packages/cookbook-expo/.*"
+                    desc="gl-react 上游源码与示例，不修改版权头" />
+                <filteritem type="filepath" name="packages/cookbook-expo-camera/.*"
+                    desc="gl-react 上游源码与示例，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react-blur/.*"
+                    desc="gl-react 上游源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react-headless/.*"
+                    desc="gl-react 上游源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react-dom/.*"
+                    desc="gl-react 上游源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react-expo/.*"
+                    desc="gl-react 上游源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react-native/.*"
+                    desc="gl-react 上游源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react-image/.*"
+                    desc="gl-react 上游源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/tests/.*" desc="gl-react 上游测试，不修改版权头" />
+                <filteritem type="filepath" name="examples/.*" desc="gl-react 上游示例工程，不修改版权头" />
+                <filteritem type="filepath" name="scripts/.*" desc="上游仓库构建脚本，不修改版权头" />
+                <!-- ===== packages/gl-react/src 上游核心（自研鸿蒙绑定文件除外，自研文件已添加版权头） ===== -->
+                <filteritem type="filepath" name="packages/gl-react/src/Bus.tsx"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/GLContext.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/GLSL.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/LinearCopy.tsx"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/NearestCopy.tsx"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Node.tsx"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Shaders.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Uniform.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Visitor.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/VisitorLogger.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Visitors.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/connectSize.tsx"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/copyShader.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/createSurface.tsx"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/genId.ts"
+                    desc="gl-react 上游核心源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/helpers/.*"
+                    desc="gl-react 上游核心工具源码，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/gl-shader.d.ts"
+                    desc="gl-react 上游类型声明，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/invariant.d.ts"
+                    desc="gl-react 上游类型声明，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/ndarray.d.ts"
+                    desc="gl-react 上游类型声明，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/typedarray-pool.d.ts"
+                    desc="gl-react 上游类型声明，不修改版权头" />
+                <!-- ===== 工程脚本 / DevEco 模板 / 构建配置 ===== -->
+                <filteritem type="filename" name=".*.json5"
+                    desc="构建与工程配置文件，DevEco Studio/工具自动生成，不手动修改" />
+                <filteritem type="filepath" name=".*hvigorfile.ts"
+                    desc="hvigor 构建脚本，DevEco Studio 自动生成，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/cpp/PackageProvider.cpp"
+                    desc="RNOH 工程模板文件，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/RNPackagesFactory.ets"
+                    desc="RNOH 工程模板文件（含少量接线配置），不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/entryability/EntryAbility.ets"
+                    desc="DevEco Studio 工程模板，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/entrybackupability/EntryBackupAbility.ets"
+                    desc="DevEco Studio 工程模板，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/pages/Index.ets"
+                    desc="DevEco Studio 工程模板，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/ohosTest/.*"
+                    desc="DevEco Studio 自动化测试模板，不手动修改" />
+                <filteritem type="filepath" name="packages/gl-react/example/harmony/.clang-tidy"
+                    desc="clang 工具配置文件，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/example/harmony/.clangd"
+                    desc="clang 工具配置文件，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/example/babel.config.js"
+                    desc="构建配置脚本，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/example/metro.config.js"
+                    desc="构建配置脚本，不修改版权头" />
+                <filteritem type="filepath" name="packages/gl-react/example/index.js"
+                    desc="React Native 模板入口文件，不修改版权头" />
+                <filteritem type="filepath" name="babel.config.js" desc="上游仓库构建配置脚本，不修改版权头" />
+                <filteritem type="filepath" name=".prettierignore" desc="仓库工程配置文件，不修改版权头" />
+                <filteritem type="filepath" name=".prototools" desc="仓库工程配置文件，不修改版权头" />
+                <filteritem type="filepath" name="pnpm-lock.yaml" desc="依赖锁文件，不修改版权头" />
+                <filteritem type="filepath" name="pnpm-workspace.yaml" desc="仓库工程配置文件，不修改版权头" />
+                <filteritem type="filepath" name="yarn.lock" desc="依赖锁文件，不修改版权头" />
+                <!-- ===== Codegen 生成文件 ===== -->
+                <filteritem type="filepath"
+                    name="packages/gl-react/harmony/gl_react_dev/src/main/cpp/generated/.*"
+                    desc="Codegen 生成文件，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/harmony/gl_react_dev/src/main/ets/generated/.*"
+                    desc="Codegen 生成文件，不手动修改" />
+                <!-- ===== 版权与声明文件 ===== -->
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/resources/rawfile/bundle.harmony.js"
+                    desc="构建产物 JS Bundle，不添加版权头" />
+                <filteritem type="filename" name="LICENSE" desc="版权文件，不添加版权头" />
+                <filteritem type="filename" name="NOTICE" desc="第三方声明文件，不添加版权头" />
+            </filefilter>
+            <filefilter name="defaultPolicyFilter" desc="许可证头屏蔽策略：上游源码、工程脚本模板、Codegen 生成文件">
+                <filteritem type="filepath" name="packages/cookbook/.*"
+                    desc="gl-react 上游源码与示例，不添加许可证头" />
+                <filteritem type="filepath" name="packages/cookbook-expo/.*"
+                    desc="gl-react 上游源码与示例，不添加许可证头" />
+                <filteritem type="filepath" name="packages/cookbook-expo-camera/.*"
+                    desc="gl-react 上游源码与示例，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react-blur/.*"
+                    desc="gl-react 上游源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react-headless/.*"
+                    desc="gl-react 上游源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react-dom/.*"
+                    desc="gl-react 上游源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react-expo/.*"
+                    desc="gl-react 上游源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react-native/.*"
+                    desc="gl-react 上游源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react-image/.*"
+                    desc="gl-react 上游源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/tests/.*" desc="gl-react 上游测试，不添加许可证头" />
+                <filteritem type="filepath" name="examples/.*" desc="gl-react 上游示例工程，不添加许可证头" />
+                <filteritem type="filepath" name="scripts/.*" desc="上游仓库构建脚本，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Bus.tsx"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/GLContext.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/GLSL.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/LinearCopy.tsx"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/NearestCopy.tsx"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Node.tsx"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Shaders.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Uniform.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Visitor.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/VisitorLogger.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/Visitors.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/connectSize.tsx"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/copyShader.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/createSurface.tsx"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/genId.ts"
+                    desc="gl-react 上游核心源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/helpers/.*"
+                    desc="gl-react 上游核心工具源码，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/gl-shader.d.ts"
+                    desc="gl-react 上游类型声明，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/invariant.d.ts"
+                    desc="gl-react 上游类型声明，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/ndarray.d.ts"
+                    desc="gl-react 上游类型声明，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/src/types/typedarray-pool.d.ts"
+                    desc="gl-react 上游类型声明，不添加许可证头" />
+                <filteritem type="filename" name=".*.json5"
+                    desc="构建与工程配置文件，DevEco Studio/工具自动生成，不手动修改" />
+                <filteritem type="filepath" name=".*hvigorfile.ts"
+                    desc="hvigor 构建脚本，DevEco Studio 自动生成，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/cpp/PackageProvider.cpp"
+                    desc="RNOH 工程模板文件，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/RNPackagesFactory.ets"
+                    desc="RNOH 工程模板文件（含少量接线配置），不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/entryability/EntryAbility.ets"
+                    desc="DevEco Studio 工程模板，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/entrybackupability/EntryBackupAbility.ets"
+                    desc="DevEco Studio 工程模板，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/pages/Index.ets"
+                    desc="DevEco Studio 工程模板，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/ohosTest/.*"
+                    desc="DevEco Studio 自动化测试模板，不手动修改" />
+                <filteritem type="filepath" name="packages/gl-react/example/harmony/.clang-tidy"
+                    desc="clang 工具配置文件，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/example/harmony/.clangd"
+                    desc="clang 工具配置文件，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/example/babel.config.js"
+                    desc="构建配置脚本，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/example/metro.config.js"
+                    desc="构建配置脚本，不添加许可证头" />
+                <filteritem type="filepath" name="packages/gl-react/example/index.js"
+                    desc="React Native 模板入口文件，不添加许可证头" />
+                <filteritem type="filepath" name="babel.config.js" desc="上游仓库构建配置脚本，不添加许可证头" />
+                <filteritem type="filepath" name=".prettierignore" desc="仓库工程配置文件，不添加许可证头" />
+                <filteritem type="filepath" name=".prototools" desc="仓库工程配置文件，不添加许可证头" />
+                <filteritem type="filepath" name="pnpm-lock.yaml" desc="依赖锁文件，不添加许可证头" />
+                <filteritem type="filepath" name="pnpm-workspace.yaml" desc="仓库工程配置文件，不添加许可证头" />
+                <filteritem type="filepath" name="yarn.lock" desc="依赖锁文件，不添加许可证头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/harmony/gl_react_dev/src/main/cpp/generated/.*"
+                    desc="Codegen 生成文件，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/harmony/gl_react_dev/src/main/ets/generated/.*"
+                    desc="Codegen 生成文件，不手动修改" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/resources/rawfile/bundle.harmony.js"
+                    desc="构建产物 JS Bundle，不添加许可证头" />
+                <filteritem type="filename" name="LICENSE" desc="版权文件，不添加许可证头" />
+                <filteritem type="filename" name="NOTICE" desc="第三方声明文件，不添加许可证头" />
+            </filefilter>
+            <filefilter name="binaryFileTypePolicyFilter"
+                desc="二进制与资源文件屏蔽：打包产物、媒体资源、含中文注释被判为二进制的自研源码（已添加版权头）">
+                <!-- ===== 打包产物 / 三方依赖包 ===== -->
+                <filteritem type="filepath" name="packages/gl-react/harmony/gl_react_dev.har"
+                    desc="har 打包产物" />
+                <filteritem type="filepath" name="packages/gl-react/oh-rn-expo-gl-58.0.0.tgz"
+                    desc="三方依赖 tgz 包" />
+                <filteritem type="filepath" name="packages/gl-react/example/harmony/hvigor/.*.tgz"
+                    desc="hvigor 插件 tgz 包" />
+
+                <filteritem type="filepath" name="packages/gl-react/jtest/coverage/.*"
+                    desc="测试覆盖率报告产物" />
+                <!-- ===== 上游图片 / 视频资源 ===== -->
+                <filteritem type="filepath" name="packages/cookbook/public/assets/.*"
+                    desc="上游示例图片/视频资源" />
+                <filteritem type="filepath" name="packages/cookbook-expo/assets/.*" desc="上游示例图片资源" />
+                <filteritem type="filepath" name="packages/cookbook-expo-camera/assets/.*"
+                    desc="上游示例图标资源" />
+                <!-- ===== 鸿蒙工程图片资源 ===== -->
+                <filteritem type="filepath" name="packages/gl-react/example/assets/.*" desc="示例图片资源" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/resources/.*"
+                    desc="鸿蒙工程媒体资源" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/ohosTest/resources/.*"
+                    desc="鸿蒙工程测试资源" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/AppScope/resources/.*" desc="鸿蒙工程应用图标资源" />
+                <!-- ===== 含中文注释、被扫描器判为 binary 的自研源码文件（均已按要求添加版权头） ===== -->
+                <filteritem type="filepath" name="packages/gl-react/src/index.ts"
+                    desc="自研源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/GLViewNative.tsx"
+                    desc="自研源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/src/WebGLRenderingContextOHOS.ts"
+                    desc="自研源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/webgltexture-loader-ohos.ts"
+                    desc="自研源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/webgl1-constants.ts"
+                    desc="自研源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/src/types/webgltexture-loader.d.ts"
+                    desc="自研类型声明（含中文注释），已添加版权头" />
+                <filteritem type="filepath" name="packages/gl-react/src/specs/v1/.*"
+                    desc="自研 Codegen 规格文件（含中文注释），已添加版权头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/harmony/gl_react_dev/src/main/ets/GlReactView.ets"
+                    desc="自研 ArkTS 源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/harmony/gl_react_dev/src/main/ets/GlReactDevTurboModulesFactory.ets"
+                    desc="自研 ArkTS 源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/harmony/gl_react_dev/src/main/ets/GlImageLoaderModule.ets"
+                    desc="自研 ArkTS 源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath" name="packages/gl-react/example/App.tsx"
+                    desc="自研示例代码（含中文注释），已添加版权头" />
+                <filteritem type="filepath" name="packages/gl-react/example/demos/.*.tsx"
+                    desc="自研示例代码（含中文注释），已添加版权头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/entry/src/main/ets/AssetFileBridgePackage.ets"
+                    desc="自研 ArkTS 源码（含中文注释），已添加版权头" />
+                <filteritem type="filepath"
+                    name="packages/gl-react/example/harmony/hvigor/hvigor-config.json5"
+                    desc="hvigor 配置（含中文注释）" />
+            </filefilter>
+        </filefilterlist>
+    </oatconfig>
+</configuration>

@@ -1,0 +1,14 @@
+{
+  "license": "MIT",
+  "devDependencies": {
+
+  },
+  "author": "gl-react HarmonyOS adaptation",
+  "name": "@react-native-ohos/gl-react",
+  "description": "gl-react HarmonyOS adaptation (WebGL1 via EGL/GLES), based on upstream gl-react 6.0.0",
+  "main": "index.ets",
+  "version": "1.0.0-beta.1",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "file:../react_native_openharmony_release.har"
+  }
+}

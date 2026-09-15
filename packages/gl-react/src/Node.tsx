@@ -91,7 +91,7 @@ type AsyncMixed = (redraw?: () => void) => any;
 const isBackbuffer = (obj: any) => {
   if (obj === "Backbuffer") {
     console.warn(
-      'Backbuffer is deprecated, use Uniform.Backbuffer instead: `import {Uniform} from "gl-react"`'
+      'Backbuffer is deprecated, use Uniform.Backbuffer instead: `import {Uniform} from "@react-native-ohos/gl-react"`'
     );
     return true;
   }
